@@ -9,7 +9,8 @@
       "Read(//d/python code/**)",
       "Bash(git rm:*)",
       "Bash(git commit:*)",
-      "Bash(git init:*)"
+      "Bash(git init:*)",
+      "Bash(gh:*)"
     ],
     "deny": [],
     "ask": []

@@ -11,10 +11,12 @@
             theme: {
                 extend: {
                     colors: {
-                        'primary-dark': '#001B2F',
-                        'accent-gold': '#CDAB78',
-                        'neutral-gray': '#8A97A0',
-                        'text-light': '#F8F9FA'
+                        'primary-blue': '#E3F2FD',
+                        'accent-blue': '#1976D2',
+                        'dark-blue': '#0D47A1',
+                        'light-blue': '#F3F9FF',
+                        'neutral-gray': '#546E7A',
+                        'text-dark': '#263238'
                     },
                     fontFamily: {
                         'sans': ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'sans-serif']
@@ -125,22 +127,66 @@
         }
     </style>
 </head>
-<body class="bg-white text-gray-900 font-sans antialiased">
+<body class="bg-light-blue text-text-dark font-sans antialiased">
+    <!-- LINE 浮動按鈕 -->
+    <div class="fixed right-6 top-1/2 transform -translate-y-1/2 z-50 space-y-4">
+        <!-- LINE 聯絡按鈕 -->
+        <a href="https://line.me/ti/p/hRrk7j2XQP" target="_blank"
+           class="block w-14 h-14 bg-green-500 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 animate-float">
+            <div class="flex items-center justify-center w-full h-full">
+                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12.017.572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
+                </svg>
+            </div>
+        </a>
+
+        <!-- QR Code 按鈕 -->
+        <button onclick="toggleQRCode()"
+                class="block w-14 h-14 bg-accent-blue rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110">
+            <div class="flex items-center justify-center w-full h-full">
+                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M3 11h8V3H3v8zm2-6h4v4H5V5zM3 21h8v-8H3v8zm2-6h4v4H5v-4zM13 3v8h8V3h-8zm6 6h-4V5h4v4zM19 13h2v2h-2zM13 13h2v2h-2zM15 15h2v2h-2zM13 17h2v2h-2zM15 19h2v2h-2zM17 17h2v2h-2zM17 13h2v2h-2zM19 15h2v2h-2z"/>
+                </svg>
+            </div>
+        </button>
+    </div>
+
+    <!-- QR Code 彈出視窗 -->
+    <div id="qrModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg shadow-xl max-w-sm w-full p-6 relative">
+                <button onclick="toggleQRCode()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+                <h3 class="text-lg font-bold text-center mb-4 text-text-dark">加入 LINE 好友</h3>
+                <div class="text-center">
+                    <img src="line-qr-code.png" alt="LINE QR Code" class="w-48 h-48 mx-auto mb-4 rounded-lg">
+                    <p class="text-sm text-neutral-gray">掃描 QR Code 或點擊下方按鈕加好友</p>
+                    <a href="https://line.me/ti/p/hRrk7j2XQP" target="_blank"
+                       class="inline-block mt-4 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
+                        加入 LINE
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Navigation -->
-    <nav class="absolute top-0 w-full z-50 bg-transparent">
+    <nav class="absolute top-0 w-full z-40 bg-white/95 backdrop-blur-sm shadow-sm">
         <div class="max-w-7xl mx-auto px-6 py-6">
             <div class="flex justify-between items-center">
-                <div class="text-2xl font-bold text-white">
+                <div class="text-2xl font-bold text-accent-blue">
                     心傳法律事務所
                 </div>
                 <div class="hidden lg:flex space-x-10">
-                    <a href="#home" class="text-white hover:text-accent-gold transition-colors duration-300 font-medium">首頁</a>
-                    <a href="service-process.html" class="text-white hover:text-accent-gold transition-colors duration-300 font-medium">服務項目</a>
-                    <a href="team.html" class="text-white hover:text-accent-gold transition-colors duration-300 font-medium">專業團隊</a>
-                    <a href="cases.html" class="text-white hover:text-accent-gold transition-colors duration-300 font-medium">成功案例</a>
-                    <a href="pricing.html" class="text-white hover:text-accent-gold transition-colors duration-300 font-medium">收費標準</a>
-                    <a href="legal-knowledge.html" class="text-white hover:text-accent-gold transition-colors duration-300 font-medium">法律知識</a>
-                    <a href="#contact" class="text-white hover:text-accent-gold transition-colors duration-300 font-medium">聯絡我們</a>
+                    <a href="#home" class="text-accent-blue hover:text-dark-blue transition-colors duration-300 font-medium">首頁</a>
+                    <a href="service-process.html" class="text-neutral-gray hover:text-accent-blue transition-colors duration-300 font-medium">服務項目</a>
+                    <a href="team.html" class="text-neutral-gray hover:text-accent-blue transition-colors duration-300 font-medium">專業團隊</a>
+                    <a href="cases.html" class="text-neutral-gray hover:text-accent-blue transition-colors duration-300 font-medium">成功案例</a>
+                    <a href="pricing.html" class="text-neutral-gray hover:text-accent-blue transition-colors duration-300 font-medium">收費標準</a>
+                    <a href="legal-knowledge.html" class="text-neutral-gray hover:text-accent-blue transition-colors duration-300 font-medium">法律知識</a>
+                    <a href="#contact" class="text-neutral-gray hover:text-accent-blue transition-colors duration-300 font-medium">聯絡我們</a>
                 </div>
                 <div class="lg:hidden">
                     <button id="mobile-menu-button" class="text-white hover:text-accent-gold transition-colors duration-300 focus:outline-none">
@@ -233,30 +279,30 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="relative h-screen flex items-center justify-center text-white pt-32 md:pt-0" style="background: linear-gradient(rgba(0, 27, 47, 0.8), rgba(0, 27, 47, 0.8)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover">
+    <section id="home" class="relative h-screen flex items-center justify-center text-text-dark pt-32 md:pt-0" style="background: linear-gradient(rgba(227, 242, 253, 0.95), rgba(243, 249, 255, 0.9)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <div class="max-w-6xl mx-auto mb-16 hero-animate-fade-in-up">
-                <div class="bg-white/10 backdrop-blur-lg border border-accent-gold/30 rounded-2xl p-8 md:p-12 shadow-2xl transform transition-all duration-1000 hover:scale-105 hover:shadow-accent-gold/20">
+                <div class="bg-white/80 backdrop-blur-lg border border-accent-blue/30 rounded-2xl p-8 md:p-12 shadow-2xl transform transition-all duration-1000 hover:scale-105 hover:shadow-accent-blue/20">
                     <div class="text-center mb-8">
-                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 hero-animate-slide-in-left">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-text-dark mb-6 hero-animate-slide-in-left">
                             <span class="block mb-2 hero-animate-bounce-in delay-200">心傳法律事務所</span>
-                            <span class="block text-accent-gold hero-animate-bounce-in delay-500">專業法律服務團隊</span>
+                            <span class="block text-accent-blue hero-animate-bounce-in delay-500">專業法律服務團隊</span>
                         </h1>
-                        <div class="w-32 h-1 bg-accent-gold mx-auto rounded-full mb-8 md:mb-6 hero-animate-expand delay-800"></div>
-                        <p class="text-xl lg:text-2xl text-gray-200 leading-relaxed mb-6 md:mb-4 hero-animate-fade-in delay-1000">
+                        <div class="w-32 h-1 bg-accent-blue mx-auto rounded-full mb-8 md:mb-6 hero-animate-expand delay-800"></div>
+                        <p class="text-xl lg:text-2xl text-neutral-gray leading-relaxed mb-6 md:mb-4 hero-animate-fade-in delay-1000">
                             資深法官轉任律師，豐富審判經驗，值得信賴的法律專家
                         </p>
-                        <p class="text-lg lg:text-xl text-accent-gold font-semibold hero-animate-fade-in delay-1200">
+                        <p class="text-lg lg:text-xl text-accent-blue font-semibold hero-animate-fade-in delay-1200">
                             民事、刑事、行政專業法律服務
                         </p>
                     </div>
                 </div>
             </div>
             <div class="flex flex-col sm:flex-row gap-6 justify-center hero-animate-fade-in-up delay-1500">
-                <a href="#contact" class="bg-accent-gold text-primary-dark px-10 py-4 text-lg font-bold hover:bg-yellow-300 transition-all duration-300 transform hover:scale-110 hover:rotate-1 hover:shadow-2xl hero-animate-bounce-in delay-1600">
+                <a href="#contact" class="bg-accent-blue text-white px-10 py-4 text-lg font-bold hover:bg-dark-blue transition-all duration-300 transform hover:scale-110 hover:rotate-1 hover:shadow-2xl hero-animate-bounce-in delay-1600">
                     立即諮詢
                 </a>
-                <a href="tel:0987654321" class="border-2 border-white text-white px-10 py-4 text-lg font-bold hover:bg-white hover:text-primary-dark transition-all duration-300 transform hover:scale-110 hover:-rotate-1 hover:shadow-2xl hero-animate-bounce-in delay-1800">
+                <a href="tel:0987654321" class="border-2 border-accent-blue text-accent-blue px-10 py-4 text-lg font-bold hover:bg-accent-blue hover:text-white transition-all duration-300 transform hover:scale-110 hover:-rotate-1 hover:shadow-2xl hero-animate-bounce-in delay-1800">
                     免費法律諮詢
                 </a>
             </div>
@@ -676,6 +722,21 @@
     </div>
 
     <script>
+        // QR Code Modal Toggle
+        function toggleQRCode() {
+            const modal = document.getElementById('qrModal');
+            modal.classList.toggle('hidden');
+        }
+
+        // Close modal when clicking outside
+        document.addEventListener('click', function(event) {
+            const modal = document.getElementById('qrModal');
+            const modalContent = modal.querySelector('div > div');
+            if (event.target === modal) {
+                modal.classList.add('hidden');
+            }
+        });
+
         // Mobile menu toggle
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuButton = document.getElementById('mobile-menu-button');
