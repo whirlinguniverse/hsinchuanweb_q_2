@@ -22,6 +22,25 @@
             }
         }
     </script>
+    <style>
+        .bg-parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        @media (max-width: 768px) {
+            .bg-parallax {
+                background-attachment: scroll;
+            }
+        }
+        .enhanced-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+        }
+    </style>
 </head>
 <body class="bg-light-blue text-text-dark font-sans antialiased">
     <!-- Navigation -->
@@ -43,16 +62,19 @@
     </nav>
 
     <!-- Header Section -->
-    <section class="bg-gradient-to-br from-accent-blue to-gray-800 text-white py-20">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <h1 class="text-4xl lg:text-6xl font-bold mb-6">收費標準</h1>
-            <p class="text-xl lg:text-2xl text-gray-300">透明公開的收費標準，專業合理的法律服務</p>
+    <section class="relative text-white py-20 bg-parallax" style="background-image: linear-gradient(rgba(25, 118, 210, 0.8), rgba(55, 71, 79, 0.85)), url('https://images.unsplash.com/photo-1589994965851-a8f479c573a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')">
+        <div class="absolute inset-0 bg-gradient-to-br from-transparent via-black/10 to-black/20"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+            <h1 class="text-4xl lg:text-6xl font-bold mb-6 drop-shadow-lg">收費標準</h1>
+            <p class="text-xl lg:text-2xl text-gray-200 drop-shadow-md">透明公開的收費標準，專業合理的法律服務</p>
+        </div>
         </div>
     </section>
 
     <!-- Pricing Overview -->
-    <section class="py-24 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-6">
+    <section class="py-24 relative" style="background: linear-gradient(rgba(249, 250, 251, 0.95), rgba(243, 244, 246, 0.9)), url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover">
+        <div class="absolute inset-0 bg-gradient-to-br from-white/50 via-gray-50/30 to-blue-50/20"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-3xl lg:text-4xl font-bold text-accent-blue mb-6">法律服務收費</h2>
                 <p class="text-xl text-gray-600">公開透明的收費標準，讓您安心委託</p>
@@ -65,7 +87,7 @@
                     <p class="text-lg text-gray-600">專業法律意見，解決您的法律疑問</p>
                 </div>
                 <div class="grid md:grid-cols-2 gap-8">
-                    <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="enhanced-card p-6 rounded-xl hover:scale-105 transition-all duration-300">
                         <h4 class="text-xl font-bold text-accent-blue mb-4">法律諮詢收費</h4>
                         <div class="text-2xl font-bold text-accent-blue mb-2">每小時 8,000~10,000元</div>
                         <p class="text-sm text-gray-600 mb-4">依案件性質每小時酌收諮詢費，如委任案件則抵充委任費</p>
@@ -81,7 +103,7 @@
 
             <!-- 訴訟代理 -->
             <div class="grid lg:grid-cols-3 gap-8 mb-12">
-                <div class="bg-white p-8 rounded-xl shadow-lg">
+                <div class="enhanced-card p-8 rounded-xl shadow-lg hover:scale-105 transition-all duration-300">
                     <div class="text-center mb-6">
                         <div class="w-16 h-16 bg-accent-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
                             <svg class="w-8 h-8 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -107,7 +129,7 @@
                     </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-xl shadow-lg">
+                <div class="enhanced-card p-8 rounded-xl shadow-lg hover:scale-105 transition-all duration-300">
                     <div class="text-center mb-6">
                         <div class="w-16 h-16 bg-accent-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
                             <svg class="w-8 h-8 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -133,7 +155,7 @@
                     </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-xl shadow-lg">
+                <div class="enhanced-card p-8 rounded-xl shadow-lg hover:scale-105 transition-all duration-300">
                     <div class="text-center mb-6">
                         <div class="w-16 h-16 bg-accent-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
                             <svg class="w-8 h-8 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -161,44 +183,45 @@
             </div>
 
             <!-- 其他服務 -->
-            <div class="bg-white rounded-2xl shadow-lg p-8 lg:p-12">
+            <div class="enhanced-card rounded-2xl shadow-lg p-8 lg:p-12">
                 <div class="text-center mb-8">
                     <h3 class="text-2xl lg:text-3xl font-bold text-accent-blue mb-4">其他法律服務</h3>
                     <p class="text-lg text-gray-600">多元化的法律服務方案</p>
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="enhanced-card p-6 rounded-xl hover:scale-105 transition-all duration-300">
                         <h4 class="text-lg font-bold text-accent-blue mb-3">合約審閱</h4>
                         <p class="text-2xl font-bold text-accent-blue mb-3">面議</p>
                         <p class="text-sm text-gray-600">依合約複雜度與頁數計算</p>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="enhanced-card p-6 rounded-xl hover:scale-105 transition-all duration-300">
                         <h4 class="text-lg font-bold text-accent-blue mb-3">法律文件撰寫</h4>
                         <p class="text-2xl font-bold text-accent-blue mb-3">面議</p>
                         <p class="text-sm text-gray-600">依文件類型與複雜度計算</p>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="enhanced-card p-6 rounded-xl hover:scale-105 transition-all duration-300">
                         <h4 class="text-lg font-bold text-accent-blue mb-3">調解協商</h4>
                         <p class="text-2xl font-bold text-accent-blue mb-3">面議</p>
                         <p class="text-sm text-gray-600">依案件性質與時間計算</p>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="enhanced-card p-6 rounded-xl hover:scale-105 transition-all duration-300">
                         <h4 class="text-lg font-bold text-accent-blue mb-3">法律顧問</h4>
                         <p class="text-2xl font-bold text-accent-blue mb-3">面議</p>
                         <p class="text-sm text-gray-600">月費或年費制，依需求調整</p>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="enhanced-card p-6 rounded-xl hover:scale-105 transition-all duration-300">
                         <h4 class="text-lg font-bold text-accent-blue mb-3">公證服務</h4>
                         <p class="text-2xl font-bold text-accent-blue mb-3">面議</p>
                         <p class="text-sm text-gray-600">依公證項目與複雜度計算</p>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="enhanced-card p-6 rounded-xl hover:scale-105 transition-all duration-300">
                         <h4 class="text-lg font-bold text-accent-blue mb-3">專案服務</h4>
                         <p class="text-2xl font-bold text-accent-blue mb-3">面議</p>
                         <p class="text-sm text-gray-600">依專案規模與時程計算</p>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 
@@ -252,12 +275,13 @@
                 </div>
             </div>
         </div>
+        </div>
     </section>
 
     <!-- Contact CTA -->
 
     <!-- Footer -->
-    <footer class="bg-gradient-to-br from-slate-100 via-blue-50 to-indigo-100 text-slate-800 py-16 relative overflow-hidden">
+    <footer class="text-slate-800 py-16 relative overflow-hidden" style="background: linear-gradient(rgba(241, 245, 249, 0.95), rgba(219, 234, 254, 0.9)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover">
         <!-- 裝飾性背景元素 -->
         <div class="absolute inset-0 bg-gradient-to-tr from-blue-200/20 via-indigo-100/30 to-slate-200/20"></div>
         <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-blue-300/15 to-transparent rounded-full blur-3xl"></div>

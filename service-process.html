@@ -22,6 +22,68 @@
             }
         }
     </script>
+    <style>
+        /* 圖片加載優化和視覺效果 */
+        .bg-parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        @media (max-width: 768px) {
+            .bg-parallax {
+                background-attachment: scroll;
+            }
+        }
+
+        /* 增強的卡片效果 */
+        .enhanced-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+        }
+
+        /* 動態光效 */
+        .light-effect::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #ff006e, #8338ec, #3a86ff, #06ffa5, #ffbe0b, #fb5607);
+            background-size: 400%;
+            border-radius: inherit;
+            z-index: -1;
+            animation: glowing 20s linear infinite;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .light-effect:hover::before {
+            opacity: 0.1;
+        }
+
+        @keyframes glowing {
+            0% { background-position: 0 0; }
+            50% { background-position: 400% 0; }
+            100% { background-position: 0 0; }
+        }
+
+        /* 滾動動畫 */
+        .scroll-fade {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .scroll-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body class="bg-light-blue text-text-dark font-sans antialiased">
     <!-- Navigation -->
@@ -43,23 +105,25 @@
     </nav>
 
     <!-- Header Section -->
-    <section class="bg-gradient-to-br from-accent-blue to-gray-800 text-white py-20">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <h1 class="text-4xl lg:text-6xl font-bold mb-6">專業服務項目</h1>
-            <p class="text-xl lg:text-2xl text-gray-300">民事、刑事、行政全方位法律服務</p>
+    <section class="relative text-white py-20 bg-parallax" style="background-image: linear-gradient(rgba(25, 118, 210, 0.8), rgba(55, 71, 79, 0.85)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')">
+        <div class="absolute inset-0 bg-gradient-to-br from-transparent via-black/10 to-black/20"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+            <h1 class="text-4xl lg:text-6xl font-bold mb-6 drop-shadow-lg">專業服務項目</h1>
+            <p class="text-xl lg:text-2xl text-gray-200 drop-shadow-md">民事、刑事、行政全方位法律服務</p>
         </div>
     </section>
 
     <!-- Services Overview -->
-    <section class="py-24 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-6">
+    <section class="py-24 relative" style="background: linear-gradient(rgba(249, 250, 251, 0.95), rgba(243, 244, 246, 0.9)), url('https://images.unsplash.com/photo-1479142506502-19b3a3b7ff33?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover">
+        <div class="absolute inset-0 bg-gradient-to-br from-white/50 via-gray-50/30 to-blue-50/20"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-3xl lg:text-4xl font-bold text-accent-blue mb-6">法律服務領域</h2>
                 <p class="text-xl text-gray-600">豐富司法經驗，專業法律服務</p>
             </div>
 
             <div class="grid lg:grid-cols-3 gap-8 mb-20">
-                <div class="bg-white p-8 rounded-xl shadow-lg">
+                <div class="enhanced-card p-8 rounded-xl shadow-lg scroll-fade hover:scale-105 transition-all duration-300">
                     <div class="w-16 h-16 bg-accent-blue/10 rounded-full flex items-center justify-center mx-auto mb-6">
                         <svg class="w-8 h-8 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
@@ -76,7 +140,7 @@
                     </ul>
                 </div>
 
-                <div class="bg-white p-8 rounded-xl shadow-lg">
+                <div class="enhanced-card p-8 rounded-xl shadow-lg scroll-fade hover:scale-105 transition-all duration-300">
                     <div class="w-16 h-16 bg-accent-blue/10 rounded-full flex items-center justify-center mx-auto mb-6">
                         <svg class="w-8 h-8 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -93,7 +157,7 @@
                     </ul>
                 </div>
 
-                <div class="bg-white p-8 rounded-xl shadow-lg">
+                <div class="enhanced-card p-8 rounded-xl shadow-lg scroll-fade hover:scale-105 transition-all duration-300">
                     <div class="w-16 h-16 bg-accent-blue/10 rounded-full flex items-center justify-center mx-auto mb-6">
                         <svg class="w-8 h-8 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
@@ -111,44 +175,46 @@
                 </div>
             </div>
         </div>
+        </div>
     </section>
 
     <!-- Service Process -->
-    <section class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
+    <section class="py-24 relative" style="background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.9)), url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover">
+        <div class="absolute inset-0 bg-gradient-to-br from-white/70 via-blue-50/30 to-indigo-50/20"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-3xl lg:text-4xl font-bold text-accent-blue mb-6">服務流程</h2>
                 <p class="text-xl text-gray-600">專業、透明、高效的服務流程</p>
             </div>
 
             <div class="grid lg:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-accent-blue rounded-full flex items-center justify-center mx-auto mb-6">
-                        <span class="text-2xl font-bold text-accent-blue">1</span>
+                <div class="text-center scroll-fade">
+                    <div class="w-20 h-20 bg-gradient-to-br from-accent-blue to-dark-blue rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg hover:scale-110 transition-transform duration-300">
+                        <span class="text-2xl font-bold text-white">1</span>
                     </div>
                     <h3 class="text-xl font-bold text-accent-blue mb-4">初步諮詢</h3>
                     <p class="text-gray-600">免費初步法律諮詢，了解案件基本情況與法律問題</p>
                 </div>
 
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-accent-blue rounded-full flex items-center justify-center mx-auto mb-6">
-                        <span class="text-2xl font-bold text-accent-blue">2</span>
+                <div class="text-center scroll-fade">
+                    <div class="w-20 h-20 bg-gradient-to-br from-accent-blue to-dark-blue rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg hover:scale-110 transition-transform duration-300">
+                        <span class="text-2xl font-bold text-white">2</span>
                     </div>
                     <h3 class="text-xl font-bold text-accent-blue mb-4">案件評估</h3>
                     <p class="text-gray-600">詳細分析案件，評估勝訴機率，提供專業法律建議</p>
                 </div>
 
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-accent-blue rounded-full flex items-center justify-center mx-auto mb-6">
-                        <span class="text-2xl font-bold text-accent-blue">3</span>
+                <div class="text-center scroll-fade">
+                    <div class="w-20 h-20 bg-gradient-to-br from-accent-blue to-dark-blue rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg hover:scale-110 transition-transform duration-300">
+                        <span class="text-2xl font-bold text-white">3</span>
                     </div>
                     <h3 class="text-xl font-bold text-accent-blue mb-4">委任簽約</h3>
                     <p class="text-gray-600">簽署委任契約，明確服務內容與收費標準</p>
                 </div>
 
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-accent-blue rounded-full flex items-center justify-center mx-auto mb-6">
-                        <span class="text-2xl font-bold text-accent-blue">4</span>
+                <div class="text-center scroll-fade">
+                    <div class="w-20 h-20 bg-gradient-to-br from-accent-blue to-dark-blue rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg hover:scale-110 transition-transform duration-300">
+                        <span class="text-2xl font-bold text-white">4</span>
                     </div>
                     <h3 class="text-xl font-bold text-accent-blue mb-4">專業處理</h3>
                     <p class="text-gray-600">運用豐富經驗，專業處理案件，維護委託人權益</p>
@@ -166,7 +232,7 @@
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-xl shadow-lg">
+                <div class="enhanced-card p-8 rounded-xl shadow-lg scroll-fade hover:scale-105 transition-all duration-300">
                     <div class="w-16 h-16 bg-accent-blue/10 rounded-full flex items-center justify-center mx-auto mb-6">
                         <svg class="w-8 h-8 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
@@ -176,7 +242,7 @@
                     <p class="text-gray-600 text-center">專業起草各類法律文件，確保文件具備法律效力</p>
                 </div>
 
-                <div class="bg-white p-8 rounded-xl shadow-lg">
+                <div class="enhanced-card p-8 rounded-xl shadow-lg scroll-fade hover:scale-105 transition-all duration-300">
                     <div class="w-16 h-16 bg-accent-blue/10 rounded-full flex items-center justify-center mx-auto mb-6">
                         <svg class="w-8 h-8 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
@@ -186,7 +252,7 @@
                     <p class="text-gray-600 text-center">提供專業法律意見，協助評估法律風險與策略</p>
                 </div>
 
-                <div class="bg-white p-8 rounded-xl shadow-lg">
+                <div class="enhanced-card p-8 rounded-xl shadow-lg scroll-fade hover:scale-105 transition-all duration-300">
                     <div class="w-16 h-16 bg-accent-blue/10 rounded-full flex items-center justify-center mx-auto mb-6">
                         <svg class="w-8 h-8 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path>
@@ -196,7 +262,7 @@
                     <p class="text-gray-600 text-center">協助當事人進行調解協商，以和解方式解決紛爭</p>
                 </div>
 
-                <div class="bg-white p-8 rounded-xl shadow-lg">
+                <div class="enhanced-card p-8 rounded-xl shadow-lg scroll-fade hover:scale-105 transition-all duration-300">
                     <div class="w-16 h-16 bg-accent-blue/10 rounded-full flex items-center justify-center mx-auto mb-6">
                         <svg class="w-8 h-8 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
@@ -206,7 +272,7 @@
                     <p class="text-gray-600 text-center">詳細審閱合約條款，評估法律風險與權益保障</p>
                 </div>
 
-                <div class="bg-white p-8 rounded-xl shadow-lg">
+                <div class="enhanced-card p-8 rounded-xl shadow-lg scroll-fade hover:scale-105 transition-all duration-300">
                     <div class="w-16 h-16 bg-accent-blue/10 rounded-full flex items-center justify-center mx-auto mb-6">
                         <svg class="w-8 h-8 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0H8m8 0v2a2 2 0 002 2h2a2 2 0 002-2V8a2 2 0 00-2-2h-2z"></path>
@@ -216,7 +282,7 @@
                     <p class="text-gray-600 text-center">提供長期法律顧問服務，預防法律風險</p>
                 </div>
 
-                <div class="bg-white p-8 rounded-xl shadow-lg">
+                <div class="enhanced-card p-8 rounded-xl shadow-lg scroll-fade hover:scale-105 transition-all duration-300">
                     <div class="w-16 h-16 bg-accent-blue/10 rounded-full flex items-center justify-center mx-auto mb-6">
                         <svg class="w-8 h-8 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
@@ -288,5 +354,38 @@
             </div>
         </a>
     </div>
+
+    <script>
+        // 滾動動畫
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollElements = document.querySelectorAll('.scroll-fade');
+
+            const elementInView = (el, dividend = 1) => {
+                const elementTop = el.getBoundingClientRect().top;
+                return (
+                    elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
+                );
+            };
+
+            const displayScrollElement = (element) => {
+                element.classList.add('visible');
+            };
+
+            const handleScrollAnimation = () => {
+                scrollElements.forEach((el) => {
+                    if (elementInView(el, 1.25)) {
+                        displayScrollElement(el);
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', () => {
+                handleScrollAnimation();
+            });
+
+            // 初始檢查
+            handleScrollAnimation();
+        });
+    </script>
 </body>
 </html>
