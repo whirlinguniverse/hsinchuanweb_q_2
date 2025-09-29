@@ -12,7 +12,11 @@
       "Bash(git init:*)",
       "Bash(gh:*)",
       "Bash(python:*)",
-      "Bash(powershell:*)"
+      "Bash(powershell:*)",
+      "Bash(vercel:*)",
+      "Read(//d/舊電腦資料/game/俠客風雲傳/Tale of Wuxia/Config/SaveData/**)",
+      "Read(//d/舊電腦資料/game/俠客風雲傳/Tale of Wuxia/**)",
+      "Bash(cat:*)"
     ],
     "deny": [],
     "ask": []
