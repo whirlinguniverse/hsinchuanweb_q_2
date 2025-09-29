@@ -11,12 +11,14 @@
             theme: {
                 extend: {
                     colors: {
-                        'primary-blue': '#E3F2FD',
-                        'accent-blue': '#1976D2',
-                        'dark-blue': '#0D47A1',
-                        'light-blue': '#F3F9FF',
-                        'neutral-gray': '#546E7A',
-                        'text-dark': '#263238'
+                        'primary-blue': '#1E3A8A',
+                        'accent-blue': '#3B82F6',
+                        'dark-blue': '#1E3A8A',
+                        'light-blue': '#BFDBFE',
+                        'neutral-gray': '#6B7280',
+                        'text-dark': '#1F2937',
+                        'light-gray': '#F3F4F6',
+                        'medium-gray': '#9CA3AF'
                     }
                 }
             }
@@ -73,27 +75,27 @@
         }
     </style>
 </head>
-<body class="bg-light-blue text-text-dark font-sans antialiased">
+<body class="bg-white text-text-dark font-sans antialiased">
     <!-- Navigation -->
-    <nav class="bg-primary-blue shadow-lg sticky top-0 z-50">
+    <nav class="bg-white/90 backdrop-blur-sm shadow-lg sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
-                <div class="text-2xl font-bold text-accent-blue">
+                <div class="text-2xl font-bold text-dark-blue">
                     <a href="index.html">心傳法律事務所</a>
                 </div>
                 <div class="hidden lg:flex space-x-8">
-                    <a href="index.html" class="text-dark-blue hover:text-accent-blue transition-colors duration-300">首頁</a>
-                    <a href="service-process.html" class="text-dark-blue hover:text-accent-blue transition-colors duration-300">服務項目</a>
-                    <a href="team.html" class="text-accent-blue font-semibold">專業團隊</a>
-                    <a href="pricing.html" class="text-dark-blue hover:text-accent-blue transition-colors duration-300">收費標準</a>
-                    <a href="index.html#contact" class="text-dark-blue hover:text-accent-blue transition-colors duration-300">聯絡我們</a>
+                    <a href="index.html" class="text-neutral-gray hover:text-dark-blue transition-colors duration-300">首頁</a>
+                    <a href="service-process.html" class="text-neutral-gray hover:text-dark-blue transition-colors duration-300">服務項目</a>
+                    <a href="team.html" class="text-dark-blue font-semibold">專業團隊</a>
+                    <a href="pricing.html" class="text-neutral-gray hover:text-dark-blue transition-colors duration-300">收費標準</a>
+                    <a href="index.html#contact" class="text-neutral-gray hover:text-dark-blue transition-colors duration-300">聯絡我們</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Header Section -->
-    <section class="relative text-white py-20 bg-parallax" style="background-image: linear-gradient(rgba(25, 118, 210, 0.8), rgba(55, 71, 79, 0.85)), url('https://images.unsplash.com/photo-1589578527966-fdac0f44566c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')">
+    <section class="relative text-white py-20 bg-parallax" style="background-image: linear-gradient(rgba(30, 58, 138, 0.6), rgba(107, 114, 128, 0.65)), url('https://images.unsplash.com/photo-1521791136064-63c0c9c47a94?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')">
         <div class="absolute inset-0 bg-gradient-to-br from-transparent via-black/10 to-black/20"></div>
         <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
             <h1 class="text-4xl lg:text-6xl font-bold mb-6 drop-shadow-lg">專業團隊</h1>
@@ -102,11 +104,11 @@
     </section>
 
     <!-- Main Team Section -->
-    <section class="py-24 relative" style="background: linear-gradient(rgba(249, 250, 251, 0.95), rgba(243, 244, 246, 0.9)), url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover">
+    <section class="py-24 relative" style="background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(191, 219, 254, 0.6)), url('https://images.unsplash.com/photo-1479142506502-19b3a3b7ff33?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover">
         <div class="absolute inset-0 bg-gradient-to-br from-white/50 via-gray-50/30 to-blue-50/20"></div>
         <div class="relative z-10 max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl lg:text-4xl font-bold text-accent-blue mb-6">心傳法律事務所團隊</h2>
+                <h2 class="text-3xl lg:text-4xl font-bold text-dark-blue mb-6">心傳法律事務所團隊</h2>
                 <p class="text-xl text-gray-600">專業、用心、負責的法律服務團隊</p>
             </div>
 
@@ -123,20 +125,20 @@
                             <!-- 圖片邊框效果 -->
                             <div class="absolute inset-0 border-4 border-gradient-to-r from-accent-blue/20 to-accent-gold/20 rounded-2xl"></div>
                         </div>
-                        <h3 class="text-3xl lg:text-4xl font-bold text-accent-blue mb-4">杭起鶴 律師</h3>
-                        <h4 class="text-xl lg:text-2xl text-accent-blue mb-6 font-semibold">主持律師</h4>
+                        <h3 class="text-3xl lg:text-4xl font-bold text-dark-blue mb-4">杭起鶴 律師</h3>
+                        <h4 class="text-xl lg:text-2xl text-dark-blue mb-6 font-semibold">主持律師</h4>
                     </div>
 
                     <!-- 律師資訊 -->
                     <div>
                         <div class="space-y-6">
                                 <div>
-                                    <h5 class="text-lg font-bold text-accent-blue mb-3">學歷背景</h5>
+                                    <h5 class="text-lg font-bold text-dark-blue mb-3">學歷背景</h5>
                                     <p class="text-gray-700 bg-gray-100 p-3 rounded-lg">司法官訓練所第三十一期結業</p>
                                 </div>
 
                                 <div>
-                                    <h5 class="text-lg font-bold text-accent-blue mb-3">專業資歷</h5>
+                                    <h5 class="text-lg font-bold text-dark-blue mb-3">專業資歷</h5>
                                     <div class="space-y-2">
                                         <p class="text-gray-700 bg-gray-100 p-3 rounded-lg">雲林地方法院 法官</p>
                                         <p class="text-gray-700 bg-gray-100 p-3 rounded-lg">台南地方法院強制執行處庭長兼民事第五庭庭長</p>
@@ -147,15 +149,15 @@
                                 </div>
 
                                 <div>
-                                    <h5 class="text-lg font-bold text-accent-blue mb-3">執業資格</h5>
+                                    <h5 class="text-lg font-bold text-dark-blue mb-3">執業資格</h5>
                                     <div class="bg-accent-blue text-white p-4 rounded-lg">
                                         <p class="font-semibold">民國80年取得律師資格</p>
-                                        <p class="text-accent-blue text-sm mt-1">律師證書字號：(80)臺檢證字第1628號</p>
+                                        <p class="text-dark-blue text-sm mt-1">律師證書字號：(80)臺檢證字第1628號</p>
                                     </div>
                                 </div>
 
                                 <div>
-                                    <h5 class="text-lg font-bold text-accent-blue mb-6 text-center">專業證書</h5>
+                                    <h5 class="text-lg font-bold text-dark-blue mb-6 text-center">專業證書</h5>
 
                                     <!-- 律師證書 -->
                                     <div class="mb-12">
@@ -163,7 +165,7 @@
                                             <img src="lawyer-license-certificate.png" alt="律師證書" class="max-w-full h-auto rounded-lg shadow-lg mx-auto" style="max-height: 80vh;">
                                         </div>
                                         <div class="text-center">
-                                            <p class="text-lg text-accent-blue font-bold mb-2">律師證書</p>
+                                            <p class="text-lg text-dark-blue font-bold mb-2">律師證書</p>
                                             <p class="text-neutral-gray">(80)臺檢證字第1628號</p>
                                         </div>
                                     </div>
@@ -174,14 +176,14 @@
                                             <img src="judicial-training-certificate.jpg" alt="司法官訓練所第三十一期結業證書" class="max-w-full h-auto rounded-lg shadow-lg mx-auto" style="max-height: 80vh;">
                                         </div>
                                         <div class="text-center">
-                                            <p class="text-lg text-accent-blue font-bold mb-2">司法官訓練所結業證書</p>
+                                            <p class="text-lg text-dark-blue font-bold mb-2">司法官訓練所結業證書</p>
                                             <p class="text-neutral-gray">第三十一期結業</p>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div>
-                                    <h5 class="text-lg font-bold text-accent-blue mb-3">法律專長</h5>
+                                    <h5 class="text-lg font-bold text-dark-blue mb-3">法律專長</h5>
                                     <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
                                         <span class="bg-accent-blue text-white px-4 py-2 rounded-full text-center font-semibold">民事法律</span>
                                         <span class="bg-accent-blue text-white px-4 py-2 rounded-full text-center font-semibold">刑事法律</span>
@@ -197,38 +199,38 @@
             <!-- 專業特色 -->
             <div class="mt-20">
                 <div class="text-center mb-12">
-                    <h3 class="text-2xl lg:text-3xl font-bold text-accent-blue mb-4">專業特色</h3>
+                    <h3 class="text-2xl lg:text-3xl font-bold text-dark-blue mb-4">專業特色</h3>
                     <p class="text-lg text-gray-600">豐富司法經驗，值得信賴的法律專家</p>
                 </div>
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="enhanced-card p-8 rounded-xl shadow-lg text-center hover:scale-105 transition-all duration-300">
                         <div class="w-16 h-16 bg-accent-blue/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <svg class="w-8 h-8 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-8 h-8 text-dark-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
                             </svg>
                         </div>
-                        <h4 class="text-xl font-bold text-accent-blue mb-4">豐富司法經驗</h4>
+                        <h4 class="text-xl font-bold text-dark-blue mb-4">豐富司法經驗</h4>
                         <p class="text-gray-600">曾任各級法院法官及審判長，深諳司法實務運作</p>
                     </div>
 
                     <div class="enhanced-card p-8 rounded-xl shadow-lg text-center hover:scale-105 transition-all duration-300">
                         <div class="w-16 h-16 bg-accent-blue/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <svg class="w-8 h-8 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-8 h-8 text-dark-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
                             </svg>
                         </div>
-                        <h4 class="text-xl font-bold text-accent-blue mb-4">專業法律知識</h4>
+                        <h4 class="text-xl font-bold text-dark-blue mb-4">專業法律知識</h4>
                         <p class="text-gray-600">涵蓋民事、刑事、行政等各領域法律專業知識</p>
                     </div>
 
                     <div class="enhanced-card p-8 rounded-xl shadow-lg text-center hover:scale-105 transition-all duration-300">
                         <div class="w-16 h-16 bg-accent-blue/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <svg class="w-8 h-8 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-8 h-8 text-dark-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
                             </svg>
                         </div>
-                        <h4 class="text-xl font-bold text-accent-blue mb-4">用心服務</h4>
+                        <h4 class="text-xl font-bold text-dark-blue mb-4">用心服務</h4>
                         <p class="text-gray-600">以誠待人，用心傾聽，為每位委託人提供最佳法律服務</p>
                     </div>
                 </div>
@@ -239,7 +241,7 @@
 
 
     <!-- Footer -->
-    <footer class="text-slate-800 py-16 relative overflow-hidden" style="background: linear-gradient(rgba(241, 245, 249, 0.95), rgba(219, 234, 254, 0.9)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover">
+    <footer class="text-slate-800 py-16 relative overflow-hidden" style="background: linear-gradient(rgba(243, 244, 246, 0.65), rgba(191, 219, 254, 0.55)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover">
         <!-- 裝飾性背景元素 -->
         <div class="absolute inset-0 bg-gradient-to-tr from-blue-200/20 via-indigo-100/30 to-slate-200/20"></div>
         <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-blue-300/15 to-transparent rounded-full blur-3xl"></div>
