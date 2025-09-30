@@ -71,12 +71,80 @@
                     <a href="index.html">心傳法律事務所</a>
                 </div>
                 <div class="hidden lg:flex space-x-8">
-                    <a href="index.html" class="text-dark-blue hover:text-dark-blue transition-colors duration-300">首頁</a>
-                    <a href="service-process.html" class="text-dark-blue hover:text-dark-blue transition-colors duration-300">服務項目</a>
-                    <a href="team.html" class="text-dark-blue hover:text-dark-blue transition-colors duration-300">關於杭起鶴</a>
+                    <a href="index.html" class="text-neutral-gray hover:text-dark-blue transition-colors duration-300">首頁</a>
+                    <a href="service-process.html" class="text-neutral-gray hover:text-dark-blue transition-colors duration-300">服務項目</a>
+                    <a href="team.html" class="text-neutral-gray hover:text-dark-blue transition-colors duration-300">關於杭起鶴</a>
                     <a href="office-info.html" class="text-dark-blue font-semibold">事務所資訊</a>
-                    <a href="pricing.html" class="text-dark-blue hover:text-dark-blue transition-colors duration-300">收費標準</a>
-                    <a href="index.html#contact" class="text-dark-blue hover:text-dark-blue transition-colors duration-300">聯絡我們</a>
+                    <a href="pricing.html" class="text-neutral-gray hover:text-dark-blue transition-colors duration-300">收費標準</a>
+                    <a href="index.html#contact" class="text-neutral-gray hover:text-dark-blue transition-colors duration-300">聯絡我們</a>
+                </div>
+                <div class="lg:hidden">
+                    <button id="mobile-menu-button" class="text-text-dark hover:text-accent-blue transition-colors duration-300 focus:outline-none">
+                        <svg id="menu-icon" class="w-8 h-8 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                        <svg id="close-icon" class="w-8 h-8 transform transition-transform duration-300 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6m0 12L6 6"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="lg:hidden fixed inset-x-0 top-0 z-40 transform -translate-y-full transition-transform duration-500 ease-in-out">
+            <div class="bg-gradient-to-br from-white via-light-gray to-light-blue backdrop-blur-lg shadow-2xl border-b border-neutral-gray/20">
+                <div class="pt-24 pb-8 px-6">
+                    <div class="max-w-sm mx-auto space-y-1">
+                        <a href="index.html" class="mobile-menu-item block px-6 py-4 text-text-dark hover:text-accent-blue hover:bg-white/10 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg backdrop-blur-sm border border-transparent hover:border-neutral-gray/20">
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                                </svg>
+                                <span class="font-medium text-lg">首頁</span>
+                            </div>
+                        </a>
+                        <a href="service-process.html" class="mobile-menu-item block px-6 py-4 text-text-dark hover:text-accent-blue hover:bg-white/10 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg backdrop-blur-sm border border-transparent hover:border-neutral-gray/20">
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0H8m8 0v2a2 2 0 002 2h2a2 2 0 002-2V8a2 2 0 00-2-2h-2z"></path>
+                                </svg>
+                                <span class="font-medium text-lg">服務項目</span>
+                            </div>
+                        </a>
+                        <a href="team.html" class="mobile-menu-item block px-6 py-4 text-text-dark hover:text-accent-blue hover:bg-white/10 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg backdrop-blur-sm border border-transparent hover:border-neutral-gray/20">
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                </svg>
+                                <span class="font-medium text-lg">關於杭起鶴</span>
+                            </div>
+                        </a>
+                        <a href="office-info.html" class="mobile-menu-item block px-6 py-4 text-white bg-accent-blue rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg backdrop-blur-sm">
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                </svg>
+                                <span class="font-medium text-lg">事務所資訊</span>
+                            </div>
+                        </a>
+                        <a href="pricing.html" class="mobile-menu-item block px-6 py-4 text-text-dark hover:text-accent-blue hover:bg-white/10 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg backdrop-blur-sm border border-transparent hover:border-neutral-gray/20">
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                                </svg>
+                                <span class="font-medium text-lg">收費標準</span>
+                            </div>
+                        </a>
+                        <a href="index.html#contact" class="mobile-menu-item block px-6 py-4 text-text-dark hover:text-accent-blue hover:bg-white/10 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg backdrop-blur-sm border border-transparent hover:border-neutral-gray/20">
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                                <span class="font-medium text-lg">聯絡我們</span>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -241,5 +309,52 @@
             </div>
         </a>
     </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+
+            if (isMenuOpen) {
+                // Show menu
+                mobileMenu.classList.remove('-translate-y-full');
+                mobileMenu.classList.add('translate-y-0');
+                menuIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            } else {
+                // Hide menu
+                mobileMenu.classList.add('-translate-y-full');
+                mobileMenu.classList.remove('translate-y-0');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        }
+
+        mobileMenuButton.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking on menu items
+        document.querySelectorAll('.mobile-menu-item').forEach(item => {
+            item.addEventListener('click', function() {
+                if (isMenuOpen) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // Close menu when clicking outside
+        mobileMenu.addEventListener('click', function(e) {
+            if (e.target === mobileMenu) {
+                toggleMenu();
+            }
+        });
+    </script>
 </body>
 </html>
